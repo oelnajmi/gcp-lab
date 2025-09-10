@@ -42,6 +42,8 @@ resource "google_container_cluster" "gke" {
 
   enable_autopilot = true
 
+  deletion_protection = false
+
   # Autopilot mode (serverless nodes)
   # autopilot {}
 
