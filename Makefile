@@ -12,6 +12,7 @@ FRONT_IMAGE = $(REGION)-docker.pkg.dev/$(PROJECT_ID)/apps/frontend:$(SHA)
 .PHONY: pin-deploy build-backend build-frontend push-backend push-frontend
 
 ## Build and push backend + frontend images with current commit SHA, then upgrade Helm releases\pin-deploy: build-backend push-backend build-frontend push-frontend
+pin-deploy: build-backend push-backend build-frontend push-frontend
 	@echo "Upgrading Helm releases with image tag $(SHA) ..."
 	helm upgrade --install backend ./helm/charts/backend -n app --set image.tag=$(SHA)
 	helm upgrade --install frontend ./helm/charts/frontend -n app --set image.tag=$(SHA)
