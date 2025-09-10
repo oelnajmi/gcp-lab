@@ -1,0 +1,20 @@
+# node / frontend
+app/frontend/node_modules/
+app/frontend/dist/
+
+# python / backend
+app/backend/__pycache__/
+app/backend/*.pyc
+app/backend/.venv/
+
+# terraform
+**/.terraform/
+**/.terraform.lock.hcl
+**/terraform.tfstate
+**/terraform.tfstate.backup
+**/*.tfvars
+
+# misc
+.DS_Store
+.env
+.vscode/
